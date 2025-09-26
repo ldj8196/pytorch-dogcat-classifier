@@ -72,6 +72,7 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 # ⚠️ 만약 GPU가 없거나 CPU만 사용하려면 +cpu 버전으로 설치하세요:
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+```
 
 ## 🔧 향후 업그레이드 아이디어
 - **DB 연동**: 학습 데이터, 이미지, 탐지 결과 등을 데이터베이스에 저장하여 관리
