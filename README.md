@@ -1,14 +1,15 @@
-# 🐶🐱 PyTorch Dog vs Cat Classifier
+# 🐶🐱 PyTorch Dog vs Cat Object Detection
 
-> Vibe Coding 방식으로 개발한 **PyTorch 기반 CNN 모델**을 활용하여 강아지와 고양이 이미지를 분류하는 프로젝트입니다.
+> Vibe Coding 방식으로 개발한 **PyTorch 기반 미리 학습된 Faster R-CNN 모델**을 활용하여 강아지와 고양이 이미지를 객체 탐지하는 프로젝트입니다.
 
 ---
 
 ## 📌 프로젝트 개요
-- Kaggle **Dogs vs Cats** 데이터셋 활용
 - PyTorch를 이용한 CNN 모델 구현
 - **Vibe Coding** 방식을 적용하여 직관적이고 유연하게 모델 설계 및 학습 진행
-- 학습 및 추론 파이프라인 구축
+- pretrained=True 옵션을 통해 COCO 데이터셋으로 미리 학습된 Faster R-CNN 모델 사용.
+  사람, 강아지, 고양이 등 COCO 클래스에 대해 학습된 가중치(weights)를 사용하기 때문에 별도로 학습시키지 않아도 바로 객체 탐지가 가능
+  기본적으로 바로 탐지 가능 → 정확도를 높이려면 추가 학습(fine-tuning) 필요
 
 ---
 
@@ -32,12 +33,10 @@
 | opencv-python | 4.12.0.88 |
 
 ## ✨ 주요 기능
-- 데이터 전처리 및 증강 (Data Augmentation)
-- CNN 모델 학습 및 평가
-- 학습 정확도/손실 시각화
-- 모델 저장(`.pth`) 및 로드 후 추론
-- 웹에서 이미지 업로드 후 강아지/고양이 탐지
-- 샘플 이미지 예측 결과 시각화
+- 웹에서 업로드한 이미지에서 강아지/고양이 객체 탐지
+- COCO 사전 학습 Faster R-CNN 모델 사용 (pretrained=True)
+- 탐지된 객체에 바운딩 박스와 클래스명 표시
+- 결과 이미지 저장
 
 ---
 
@@ -73,3 +72,9 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 # ⚠️ 만약 GPU가 없거나 CPU만 사용하려면 +cpu 버전으로 설치하세요:
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+## 🔧 향후 업그레이드 아이디어
+- **DB 연동**: 학습 데이터, 이미지, 탐지 결과 등을 데이터베이스에 저장하여 관리
+- **학습 내용 기록**: 학습 손실, 정확도, 모델 버전, 파라미터 등을 DB에 정리
+- **웹 대시보드**: DB 기반으로 학습 기록과 추론 결과를 시각화하여 모니터링 가능
+- **모델 재학습/파인튜닝 지원**: DB에 저장된 데이터로 지속적으로 모델 업데이트
