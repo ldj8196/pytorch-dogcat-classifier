@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>강아지 & 고양이 탐지기</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>강아지 & 고양이 탐지기</h1>
+        <form class="upload-form" action="/predict" method="post" enctype="multipart/form-data">
+            <label class="file-button">
+                파일 선택
+                <input type="file" name="file" accept="image/*" id="file-input">
+            </label>
+            <span id="file-name">선택된 파일 없음</span>
+            <button type="submit">탐지하기</button>
+        </form>
+
+        {% if result_img %}
+        <div class="result">
+            <h2>결과 이미지</h2>
+            <img src="{{ result_img }}" alt="결과 이미지">
+        </div>
+        {% endif %}
+        {% if error_msg %}
+            <div class="error-msg">{{ error_msg }}</div>
+        {% endif %}
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('file-input');
+        const fileName = document.getElementById('file-name');
+
+        fileInput.addEventListener('change', () => {
+            fileName.textContent = fileInput.files[0]?.name || "선택된 파일 없음";
+        });
+    </script>
+</body>
+</html>

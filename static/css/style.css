@@ -1,0 +1,113 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.upload-form {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* 파일 선택 버튼 */
+.file-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.file-button:hover {
+    background-color: #45a049;
+}
+
+.file-button input[type="file"] {
+    display: none;
+}
+
+/* 선택 파일 이름 */
+#file-name {
+    font-size: 16px;
+    color: #333;
+    min-width: 120px;
+    text-align: left;
+}
+
+.result {
+    margin-top: 30px;
+}
+
+.result img {
+    width: 90%; /* 부모 컨테이너의 90% 크기 */
+    max-width: 800px; /* 최대 800px */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* 파일 선택 버튼 */
+.file-button {
+    display: inline-block;
+    background-color: #4CAF50; /* 탐지 버튼과 동일 */
+    color: white;
+    padding: 8px 20px; /* 기존 12px 25px → 줄임 */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px; /* 기존 16px → 줄임 */
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.file-button:hover {
+    background-color: #45a049;
+}
+
+.file-button input[type="file"] {
+    display: none;
+}
+
+/* Detect 버튼 */
+.upload-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 20px; /* 크기 맞춤 */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px; /* 크기 맞춤 */
+    transition: background-color 0.3s;
+}
+
+.upload-form button:hover {
+    background-color: #45a049;
+}
+
+.error-msg {
+    color: #f44336; /* 빨간색 */
+    font-weight: bold;
+    margin-top: 20px;
+}
