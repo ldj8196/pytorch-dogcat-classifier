@@ -57,9 +57,9 @@ cd pytorch-dogcat-classifier
 # 가상환경 생성 및 활성화
 python -m venv venv
 # Windows
-venv\Scripts\activate
+.venv\Scripts\activate
 # macOS / Linux
-source venv/bin/activate
+source .venv\Scripts\activate
 
 # 필수 라이브러리 설치
 pip install fastapi uvicorn[standard] opencv-python
@@ -72,6 +72,16 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 # ⚠️ 만약 GPU가 없거나 CPU만 사용하려면 +cpu 버전으로 설치하세요:
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+```
+### 2. FastAPI 서버 실행 방법
+프로젝트의 가상환경(venv)에 진입한 후 아래 명령어로 서버를 실행합니다.  
+서버가 실행되면 기본적으로 `http://127.0.0.1:8000`에서 웹 페이지를 확인할 수 있습니다.
+
+```bash
+# 가상환경 진입 후 FastAPI 서버 실행
+uvicorn app:app --reload
+- `--reload` 옵션: 코드 변경 시 자동으로 서버 재시작  
+- `http://127.0.0.1:8000` 안내: 브라우저에서 확인 가능  
 ```
 
 ## 🔧 향후 업그레이드 아이디어
