@@ -80,8 +80,8 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 ```bash
 # 가상환경 진입 후 FastAPI 서버 실행
 uvicorn app:app --reload
-- `--reload` 옵션: 코드 변경 시 자동으로 서버 재시작  
-- `http://127.0.0.1:8000` 안내: 브라우저에서 확인 가능  
+--reload 옵션: 코드 변경 시 자동으로 서버 재시작  
+http://127.0.0.1:8000 안내: 브라우저에서 확인 가능  
 ```
 
 ## 🔧 향후 업그레이드 아이디어
